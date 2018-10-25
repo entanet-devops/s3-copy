@@ -1,0 +1,16 @@
+---
+# tasks file for s3-copy
+- name: setup local dest directories
+  file: 
+    path: "{{ s3_local_dir }}/{{ item | dirname }}"
+    state: directory
+  with_items: "{{ s3_objects }}"
+
+- name: download objects from s3
+  aws_s3:
+    bucket: "{{ s3_bucket }}"
+    object: "{{ item }}"
+    dest: "{{ s3_local_dir }}/{{ item }}"
+    overwrite: different
+    mode: get
+  with_items: "{{ s3_objects }}"

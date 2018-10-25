@@ -1,0 +1,14 @@
+galaxy_info:
+  author: DevOps
+  description: Copy a list of objects from an AWS s3 bucket to a local directory
+  company: Entanet
+
+  license: license (BSD)
+
+  min_ansible_version: 2.7
+
+  galaxy_tags:
+    - s3
+    - entanet
+
+dependencies: []
