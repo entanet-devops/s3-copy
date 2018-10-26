@@ -2,10 +2,9 @@
 # tasks file for s3-copy
 - name: Ensure boto and boto3 modules are installed
   pip:
-    name: "{{ item }}"
-  with_items:
-    - boto3
-    - botocore
+    name:
+      - boto3
+      - botocore
 
 - name: setup local dest directories
   file: 
