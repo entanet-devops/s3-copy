@@ -1,6 +1,6 @@
 ---
 # defaults file for s3-copy
-s3_local_dir: /tmp
+s3_local_dir: /tmp/s3-objects
 s3_bucket: s3-bucket
 s3_objects:
   - my_object
