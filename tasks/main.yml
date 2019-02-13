@@ -5,6 +5,7 @@
     name:
       - boto3
       - botocore
+    extra_args: --upgrade
 
 - name: setup local dest directories
   file: 
