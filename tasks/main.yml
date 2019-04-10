@@ -8,12 +8,14 @@
     extra_args: --upgrade
 
 - name: setup local dest directories
+  become: false
   file: 
     path: "{{ s3_local_dir }}/{{ item | dirname }}"
     state: directory
   with_items: "{{ s3_objects }}"
 
 - name: download objects from s3
+  become: false
   aws_s3:
     bucket: "{{ s3_bucket }}"
     object: "{{ item }}"
