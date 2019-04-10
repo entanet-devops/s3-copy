@@ -22,4 +22,6 @@
     dest: "{{ s3_local_dir }}/{{ item }}"
     overwrite: different
     mode: get
+    aws_access_key: "{{ aws_access_key | default(omit) }}"
+    aws_secret_key: "{{ aws_secret_key | default(omit) }}"
   with_items: "{{ s3_objects }}"
